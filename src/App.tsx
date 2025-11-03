@@ -13,7 +13,7 @@ interface DragOffset {
   y: number;
 }
 
-export default function BirthdayCard(): {
+function BirthdayCard() {
   const [photos, setPhotos] = useState<Photo[]>([
     { id: 1, x: 120, y: 100, rotation: -5 },
     { id: 2, x: 380, y: 80, rotation: 8 },
@@ -26,7 +26,7 @@ export default function BirthdayCard(): {
   const [dragging, setDragging] = useState<number | null>(null);
   const [dragOffset, setDragOffset] = useState<DragOffset>({ x: 0, y: 0 });
 
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>, id: number): void => {
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>, id: number) => {
     const photo = photos.find(p => p.id === id);
     if (!photo) return;
     
@@ -37,7 +37,7 @@ export default function BirthdayCard(): {
     });
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (dragging) {
       setPhotos(photos.map(p => 
         p.id === dragging 
@@ -47,7 +47,7 @@ export default function BirthdayCard(): {
     }
   };
 
-  const handleMouseUp = (): void => {
+  const handleMouseUp = () => {
     setDragging(null);
   };
 
@@ -58,7 +58,6 @@ export default function BirthdayCard(): {
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
     >
-      {/* Central Birthday Card */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
         <div className="bg-white rounded-2xl shadow-2xl p-12 max-w-2xl border-4 border-amber-200">
           <div className="text-center space-y-6">
@@ -89,7 +88,6 @@ export default function BirthdayCard(): {
         </div>
       </div>
 
-      {/* Draggable Photos */}
       {photos.map((photo) => (
         <div
           key={photo.id}
@@ -116,7 +114,6 @@ export default function BirthdayCard(): {
         </div>
       ))}
 
-      {/* Instructions */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur px-6 py-3 rounded-full shadow-lg">
         <p className="text-gray-700 font-medium">
           🖱️ Drag the photos to reveal the birthday message!
@@ -125,3 +122,5 @@ export default function BirthdayCard(): {
     </div>
   );
 }
+
+export default BirthdayCard;

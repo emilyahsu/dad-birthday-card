@@ -13,7 +13,7 @@ interface DragOffset {
   y: number;
 }
 
-export default function BirthdayCard(): JSX.Element {
+export default function BirthdayCard(): {
   const [photos, setPhotos] = useState<Photo[]>([
     { id: 1, x: 120, y: 100, rotation: -5 },
     { id: 2, x: 380, y: 80, rotation: 8 },

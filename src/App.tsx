@@ -6,6 +6,7 @@ interface Photo {
   x: number;
   y: number;
   rotation: number;
+  src: string;
 }
 
 interface DragOffset {
@@ -16,12 +17,12 @@ interface DragOffset {
 function BirthdayCard() {
   const [isMobile, setIsMobile] = useState(false);
   const [photos, setPhotos] = useState<Photo[]>([
-    { id: 1, x: 10, y: 15, rotation: -5 },
-    { id: 2, x: 60, y: 10, rotation: 8 },
-    { id: 3, x: 15, y: 60, rotation: -3 },
-    { id: 4, x: 70, y: 65, rotation: 6 },
-    { id: 5, x: 5, y: 35, rotation: 4 },
-    { id: 6, x: 75, y: 40, rotation: -7 },
+    { id: 1, x: 40, y: 30, rotation: -5, src: '/src/assets/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
+    { id: 2, x: 47, y: 30, rotation: -8, src: '/src/assets/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
+    { id: 3, x: 55, y: 50, rotation: -3, src: '/src/assets/4548a63c-c145-427d-a359-65c0afa5592e.jfif' },
+    { id: 4, x: 48, y: 50, rotation: 6, src: '/src/assets/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
+    { id: 5, x: 40, y: 50, rotation: 4, src: '/src/assets/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
+    { id: 6, x: 55, y: 32, rotation: -7, src: '/src/assets/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
   ]);
 
   const [dragging, setDragging] = useState<number | null>(null);
@@ -143,13 +144,12 @@ function BirthdayCard() {
           onTouchStart={(e) => handleStart(e, photo.id)}
         >
           <div className="w-full h-full p-2 sm:p-3">
-            <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded flex items-center justify-center text-gray-500 text-xs sm:text-sm text-center p-2 sm:p-4">
-              Photo {photo.id}
-              <br />
-              <span className="text-xs mt-1 sm:mt-2 block">
-                (Replace with your actual photos)
-              </span>
-            </div>
+            <img
+              src={photo.src}
+              alt={`Family photo ${photo.id}`}
+              className="w-full h-full object-cover rounded"
+              draggable={false}
+            />
           </div>
         </div>
       ))}

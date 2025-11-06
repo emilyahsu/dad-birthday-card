@@ -82,7 +82,7 @@ function BirthdayCard() {
       onTouchEnd={handleEnd}
     >
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
-        <div className="bg-white rounded-xl md:rounded-2xl shadow-2xl p-4 sm:p-6 md:p-12 mx-2 sm:mx-4 max-w-xs sm:max-w-md md:max-w-2xl border-2 md:border-4 border-amber-200">
+        <div className="bg-white rounded-xl md:rounded-2xl shadow-2xl p-4 sm:p-6 md:p-12 mx-1 sm:mx-4 max-w-sm sm:max-w-md md:max-w-2xl border-2 md:border-4 border-amber-200">
           <div className="text-center space-y-3 sm:space-y-4 md:space-y-6">
             <div className="flex justify-center gap-1 sm:gap-2">
               <Heart className="text-red-500 fill-red-500 animate-pulse" size={20} />

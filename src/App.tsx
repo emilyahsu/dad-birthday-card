@@ -130,18 +130,16 @@ function BirthdayCard() {
               Happy Birthday, Dad! 🎉
             </h1>
             
-            <p className="text-sm sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-              Drag the photos away to see this message!
-            </p>
-            
             <p className="text-xs sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl mx-auto">
-              Thank you for all the wonderful memories we've shared together.
-              Each photo here represents a special moment that I'll cherish forever.
-              You're not just an amazing dad, but also my hero and best friend.
+You’re old! Yippee! Thank you for being a constant source of wisdom and support in our lives. Whenever we have a stressful day or have something to share, we know that you will always be there to listen and pray for us. This year has been full of celebrations and happiness, and we are so grateful that you’ve given us many opportunities to learn and grow.
+            </p>
+
+            <p className="text-xs sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl mx-auto">
+No matter if it’s celebrating our success or comforting us in our failures, you’re always by our side. You always have the right words to encourage and uplift us. Thank you for showing us what it means to walk in God’s love and receive the life He has given us. Wishing you a blessed birthday!
             </p>
             
             <p className="text-lg sm:text-xl md:text-2xl font-semibold text-amber-600 mt-4 md:mt-8">
-              Here's to many more amazing years ahead! ❤️
+              Emily & Jonathan ❤️
             </p>
           </div>
         </div>
@@ -175,7 +173,7 @@ function BirthdayCard() {
 
       <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur px-3 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg mx-4">
         <p className="text-gray-700 font-medium text-xs sm:text-sm md:text-base text-center">
-          📱 Drag the photos to reveal the birthday message!
+          👆 Drag the photos to reveal the birthday message!
         </p>
       </div>
     </div>

@@ -21,22 +21,22 @@ function BirthdayCard() {
     if (mobile) {
       // Mobile positions
       return [
-        { id: 1, x: 20, y: 40, rotation: -5, src: '/src/assets/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
-        { id: 2, x: 55, y: 15, rotation: 8, src: '/src/assets/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
+        { id: 1, x: 10, y: 30, rotation: -5, src: '/src/assets/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
+        { id: 2, x: 30, y: 30, rotation: 8, src: '/src/assets/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
         { id: 3, x: 10, y: 50, rotation: -3, src: '/src/assets/4548a63c-c145-427d-a359-65c0afa5592e.jfif' },
-        { id: 4, x: 60, y: 45, rotation: 6, src: '/src/assets/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
-        { id: 5, x: 35, y: 35, rotation: 4, src: '/src/assets/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
-        { id: 6, x: 25, y: 60, rotation: -7, src: '/src/assets/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
+        { id: 4, x: 58, y: 30, rotation: 6, src: '/src/assets/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
+        { id: 5, x: 58, y: 50, rotation: 4, src: '/src/assets/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
+        { id: 6, x: 30, y: 50, rotation: -7, src: '/src/assets/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
       ];
     } else {
       // Desktop positions
       return [
-        { id: 1, x: 35, y: 25, rotation: -5, src: '/src/assets/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
-        { id: 2, x: 45, y: 35, rotation: 8, src: '/src/assets/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
-        { id: 3, x: 30, y: 45, rotation: -3, src: '/src/assets/4548a63c-c145-427d-a359-65c0afa5592e.jfif' },
-        { id: 4, x: 55, y: 25, rotation: 6, src: '/src/assets/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
-        { id: 5, x: 40, y: 50, rotation: 4, src: '/src/assets/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
-        { id: 6, x: 25, y: 35, rotation: -7, src: '/src/assets/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
+        { id: 1, x: 30, y: 25, rotation: -5, src: '/src/assets/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
+        { id: 2, x: 45, y: 25, rotation: 8, src: '/src/assets/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
+        { id: 3, x: 30, y: 50, rotation: -3, src: '/src/assets/4548a63c-c145-427d-a359-65c0afa5592e.jfif' },
+        { id: 4, x: 58, y: 25, rotation: 6, src: '/src/assets/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
+        { id: 5, x: 58, y: 50, rotation: 4, src: '/src/assets/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
+        { id: 6, x: 44, y: 50, rotation: -7, src: '/src/assets/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
       ];
     }
   };
@@ -113,10 +113,10 @@ function BirthdayCard() {
       onTouchMove={handleMove}
       onTouchEnd={handleEnd}
     >
-      <div className={`absolute z-0 ${isMobile ? 'inset-0' : 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'}`}>
+      <div className={`absolute z-0 ${isMobile ? 'inset-0 flex items-center justify-center' : 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'}`}>
         <div className={`bg-white shadow-2xl border-amber-200 ${
           isMobile
-            ? 'w-full h-full p-4 border-0 rounded-none flex items-center justify-center'
+            ? 'rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-12 mx-1 sm:mx-4 max-w-sm sm:max-w-md md:max-w-2xl border-2 md:border-4'
             : 'rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-12 mx-1 sm:mx-4 max-w-sm sm:max-w-md md:max-w-2xl border-2 md:border-4'
         }`}>
           <div className="text-center space-y-3 sm:space-y-4 md:space-y-6">
@@ -148,7 +148,7 @@ No matter if it’s celebrating our success or comforting us in our failures, yo
       {photos.map((photo) => (
         <div
           key={photo.id}
-          className={`absolute w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 bg-white rounded-lg shadow-xl cursor-move transition-shadow hover:shadow-2xl z-10 ${
+          className={`absolute w-36 h-36 sm:w-32 sm:h-32 md:w-48 md:h-48 bg-white rounded-lg shadow-xl cursor-move transition-shadow hover:shadow-2xl z-10 ${
             dragging === photo.id ? 'shadow-2xl scale-105' : ''
           }`}
           style={{

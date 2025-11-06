@@ -21,22 +21,22 @@ function BirthdayCard() {
     if (mobile) {
       // Mobile positions
       return [
-        { id: 1, x: 10, y: 30, rotation: -5, src: '/src/assets/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
-        { id: 2, x: 30, y: 30, rotation: 8, src: '/src/assets/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
-        { id: 3, x: 10, y: 50, rotation: -3, src: '/src/assets/4548a63c-c145-427d-a359-65c0afa5592e.jfif' },
-        { id: 4, x: 58, y: 30, rotation: 6, src: '/src/assets/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
-        { id: 5, x: 58, y: 50, rotation: 4, src: '/src/assets/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
-        { id: 6, x: 30, y: 50, rotation: -7, src: '/src/assets/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
+        { id: 1, x: 10, y: 30, rotation: -5, src: '/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
+        { id: 2, x: 30, y: 30, rotation: 8, src: '/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
+        { id: 3, x: 10, y: 50, rotation: -3, src: '/4548a63c-c145-427d-a359-65c0afa5592e.jfif' },
+        { id: 4, x: 58, y: 30, rotation: 6, src: '/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
+        { id: 5, x: 58, y: 50, rotation: 4, src: '/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
+        { id: 6, x: 30, y: 50, rotation: -7, src: '/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
       ];
     } else {
       // Desktop positions
       return [
-        { id: 1, x: 30, y: 25, rotation: -5, src: '/src/assets/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
-        { id: 2, x: 45, y: 25, rotation: 8, src: '/src/assets/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
-        { id: 3, x: 30, y: 50, rotation: -3, src: '/src/assets/4548a63c-c145-427d-a359-65c0afa5592e.jfif' },
-        { id: 4, x: 58, y: 25, rotation: 6, src: '/src/assets/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
-        { id: 5, x: 58, y: 50, rotation: 4, src: '/src/assets/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
-        { id: 6, x: 44, y: 50, rotation: -7, src: '/src/assets/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
+        { id: 1, x: 30, y: 25, rotation: -5, src: '/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
+        { id: 2, x: 45, y: 25, rotation: 8, src: '/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
+        { id: 3, x: 30, y: 50, rotation: -3, src: '/4548a63c-c145-427d-a359-65c0afa5592e.jfif' },
+        { id: 4, x: 58, y: 25, rotation: 6, src: '/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
+        { id: 5, x: 58, y: 50, rotation: 4, src: '/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
+        { id: 6, x: 44, y: 50, rotation: -7, src: '/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
       ];
     }
   };

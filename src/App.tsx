@@ -16,21 +16,40 @@ interface DragOffset {
 
 function BirthdayCard() {
   const [isMobile, setIsMobile] = useState(false);
-  const [photos, setPhotos] = useState<Photo[]>([
-    { id: 1, x: 40, y: 30, rotation: -5, src: '/src/assets/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
-    { id: 2, x: 47, y: 30, rotation: -8, src: '/src/assets/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
-    { id: 3, x: 55, y: 50, rotation: -3, src: '/src/assets/4548a63c-c145-427d-a359-65c0afa5592e.jfif' },
-    { id: 4, x: 48, y: 50, rotation: 6, src: '/src/assets/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
-    { id: 5, x: 40, y: 50, rotation: 4, src: '/src/assets/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
-    { id: 6, x: 55, y: 32, rotation: -7, src: '/src/assets/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
-  ]);
+  
+  const getInitialPositions = (mobile: boolean): Photo[] => {
+    if (mobile) {
+      // Mobile positions
+      return [
+        { id: 1, x: 20, y: 40, rotation: -5, src: '/src/assets/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
+        { id: 2, x: 55, y: 15, rotation: 8, src: '/src/assets/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
+        { id: 3, x: 10, y: 50, rotation: -3, src: '/src/assets/4548a63c-c145-427d-a359-65c0afa5592e.jfif' },
+        { id: 4, x: 60, y: 45, rotation: 6, src: '/src/assets/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
+        { id: 5, x: 35, y: 35, rotation: 4, src: '/src/assets/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
+        { id: 6, x: 25, y: 60, rotation: -7, src: '/src/assets/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
+      ];
+    } else {
+      // Desktop positions
+      return [
+        { id: 1, x: 35, y: 25, rotation: -5, src: '/src/assets/4ef834f8-850a-402b-bc7d-7436f107da8c.jfif' },
+        { id: 2, x: 45, y: 35, rotation: 8, src: '/src/assets/598e8b7d-6705-4e2b-9f78-29f7ea079cae.jfif' },
+        { id: 3, x: 30, y: 45, rotation: -3, src: '/src/assets/4548a63c-c145-427d-a359-65c0afa5592e.jfif' },
+        { id: 4, x: 55, y: 25, rotation: 6, src: '/src/assets/7821caaf-a7e5-4b52-9a08-ee2551a0ccd4.jfif' },
+        { id: 5, x: 40, y: 50, rotation: 4, src: '/src/assets/ac96324e-7af9-4487-b3c1-80553ca6f40a.jfif' },
+        { id: 6, x: 25, y: 35, rotation: -7, src: '/src/assets/d9a7f36b-3c13-4f51-8487-e18e6bd72c2e.jfif' },
+      ];
+    }
+  };
 
+  const [photos, setPhotos] = useState<Photo[]>(getInitialPositions(false));
   const [dragging, setDragging] = useState<number | null>(null);
   const [dragOffset, setDragOffset] = useState<DragOffset>({ x: 0, y: 0 });
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint
+      const mobile = window.innerWidth < 768; // md breakpoint
+      setIsMobile(mobile);
+      setPhotos(getInitialPositions(mobile));
     };
     
     checkMobile();

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Heart } from 'lucide-react';
 
 interface Photo {
@@ -14,6 +14,7 @@ interface DragOffset {
 }
 
 function BirthdayCard() {
+  const [isMobile, setIsMobile] = useState(false);
   const [photos, setPhotos] = useState<Photo[]>([
     { id: 1, x: 10, y: 15, rotation: -5 },
     { id: 2, x: 60, y: 10, rotation: 8 },
@@ -25,6 +26,17 @@ function BirthdayCard() {
 
   const [dragging, setDragging] = useState<number | null>(null);
   const [dragOffset, setDragOffset] = useState<DragOffset>({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const getEventCoordinates = (e: React.MouseEvent | React.TouchEvent) => {
     if ('touches' in e) {
@@ -81,8 +93,12 @@ function BirthdayCard() {
       onTouchMove={handleMove}
       onTouchEnd={handleEnd}
     >
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
-        <div className="bg-white rounded-xl md:rounded-2xl shadow-2xl p-4 sm:p-6 md:p-12 mx-1 sm:mx-4 max-w-sm sm:max-w-md md:max-w-2xl border-2 md:border-4 border-amber-200">
+      <div className={`absolute z-0 ${isMobile ? 'inset-0' : 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'}`}>
+        <div className={`bg-white shadow-2xl border-amber-200 ${
+          isMobile
+            ? 'w-full h-full p-4 border-0 rounded-none flex items-center justify-center'
+            : 'rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-12 mx-1 sm:mx-4 max-w-sm sm:max-w-md md:max-w-2xl border-2 md:border-4'
+        }`}>
           <div className="text-center space-y-3 sm:space-y-4 md:space-y-6">
             <div className="flex justify-center gap-1 sm:gap-2">
               <Heart className="text-red-500 fill-red-500 animate-pulse" size={20} />
